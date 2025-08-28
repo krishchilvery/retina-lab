@@ -1,0 +1,22 @@
+{
+  "main": "electron/main.ts",
+  "type": "module",
+  "scripts": {
+    "dev": "concurrently -k \"npm run dev --prefix renderer\" \"npm run start:electron\"",
+    "start:electron": "cross-env NODE_ENV=development electron -r ts-node/register .",
+    "build": "npm run build --prefix renderer",
+    "start": "cross-env NODE_ENV=production electron -r ts-node/register ."
+  },
+  "devDependencies": {
+    "@types/node": "^24.3.0",
+    "concurrently": "^9.2.1",
+    "cross-env": "^10.0.0",
+    "electron": "^37.3.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.2"
+  },
+  "dependencies": {
+    "@types/uuid": "^10.0.0",
+    "uuid": "^11.1.0"
+  }
+}
